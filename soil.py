@@ -1,8 +1,8 @@
 import requests
 
 def main():
-    longitude = input("longitude")
-    latitude = input("latitude")
+    longitude = input("longitude: ")
+    latitude = input("latitude: ")
     url = f"http://www.landis.org.uk/arcgis/rest/services/Utilities/Geometry/GeometryServer/project?f=json&outSR=27700&inSR=4326&geometries=%7B%22geometryType%22%3A%22esriGeometryPoint%22%2C%22geometries%22%3A%5B%7B%22x%22%3A{latitude}%2C%22y%22%3A{longitude}%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D%5D%7D"
     print(url)
     j = requests.get(url).json()
